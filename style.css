@@ -1,3 +1,9 @@
+body{
+    background-color: #b39ed9;
+    display: flex;
+    flex-direction: column;
+}
+
 .container{
     display: flex;
     border: 1px black solid;
@@ -13,10 +19,10 @@
     margin:0%;
     padding-top: 15px;
     padding-bottom: 15px;
+    background-color: #78777a ;
 }
 
 ol .home,.about,.links, .contact,.mid_logo{
-    border: 1px green solid;
     width: 150px;
     display: flex;
     justify-content: center;
@@ -27,4 +33,29 @@ ol .home,.about,.links, .contact,.mid_logo{
 .mid_logo{
     margin-left: 150px;
     margin-right: 150px;
+}
+
+.main_body{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-self: center;
+    margin-top: 30px;
+    width: 80%;
+    height: 500px;
+    background-color: #9fd6d6;
+}
+
+.main_body div{
+    border: 1px black solid;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+button{
+    border-radius: 10px;
 }
