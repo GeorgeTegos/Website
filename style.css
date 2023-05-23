@@ -71,11 +71,15 @@ button{
     flex: 1 1 50%;
     background-color: aqua;
 }
+.games{
+    background-color: #b39ed9;
+}
 
 .games > *{
     flex-flow: column wrap;
+    background-color: #9fd6d6;
     gap: 5px;
-    margin: 10px;
+    margin: 5px;
 
 }
 .above_footer{
