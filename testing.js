@@ -62,10 +62,17 @@ function NumberGuessing(){
     let chances = 5;
 
     function getRandomInt(max) {
-        return Math.floor(Math.random() * max);
+        let x = Math.floor(Math.random() * max);
+        if (x == 0){
+            do{
+                x = Math.floor(Math.random() * max);
+            }while (x == 0)
+        }
+        return x;
     }
-    
+
     let rNumber = getRandomInt(101);
+
     let userNumber = Number(prompt("Give your first guess !"));
 
     for (chances = 5; chances > 0; chances--){
@@ -83,5 +90,6 @@ function NumberGuessing(){
             alert(`Wrong guess, you have ${chances} guesses left \n Guess Higher!`);
             userNumber = Number(prompt(`Give your next guess !\n`));
         }
-    }
+    
+}
 }
