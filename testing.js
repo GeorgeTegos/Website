@@ -31,25 +31,29 @@ function RandomWin(){
     let nRange = Number(prompt("Give a Possitive Number Range \n"))
     if (nRange > 0){
         let iNumber = Number(prompt("Give your Number !"))
-
-        
-        function getRandomInt(max) {
-            return Math.floor(Math.random() * (max+1));
+        if ((iNumber < 0) || (iNumber > nRange)){
+            alert("Your Number Can't be 0 or less or higher the number range")
         }
-        const rNumber = getRandomInt(nRange)
+        else{        
+            function getRandomInt(max) {
+                return Math.floor(Math.random() * (max+1));
+            }
+            const rNumber = getRandomInt(nRange)
 
-        if (iNumber > rNumber){
-            alert(`${rNumber}     \nYOU WON !`)
-        }
-        else if (iNumber == rNumber){
+            if (iNumber > rNumber){
+                alert(`${rNumber}     \nYOU WON !`)
+            }
+            else if (iNumber == rNumber){
 
-            alert(`${rNumber}     \nDraw !`)
+                alert(`${rNumber}     \nDraw !`)
+            }
+            else{
+                alert(`${rNumber}     \nYou Lost !`)
+            }  
         }
-        else{
-            alert(`${rNumber}     \nYou Lost !`)
-        }  
     }
     else{
-        alert("You Should Give a possitive Number")
+            alert("You Should Give a possitive Number")
     }
+    
 }
