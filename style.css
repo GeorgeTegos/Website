@@ -72,6 +72,12 @@ button{
     background-color: aqua;
 }
 
+.games > *{
+    flex-flow: column wrap;
+    gap: 5px;
+    margin: 10px;
+
+}
 .above_footer{
     width: 100%;
     height: 100px;
