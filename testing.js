@@ -57,3 +57,31 @@ function RandomWin(){
     }
     
 }
+
+function NumberGuessing(){
+    let chances = 5;
+
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
+    
+    let rNumber = getRandomInt(101);
+    let userNumber = Number(prompt("Give your first guess !"));
+
+    for (chances = 5; chances > 0; chances--){
+        if (userNumber == rNumber){
+            alert(`YOU WON \n the number was ${rNumber}!`)
+            break;
+        } else if(userNumber > rNumber){
+            alert(`Wrong guess, you have ${chances} guesses left \n Guess Lower!`);
+            userNumber = Number(prompt(`Give your next guess !\n`));
+        } else if((userNumber == null) || (userNumber == undefined) || (userNumber <= 0)){
+            alert('Wrong or Null Input \n Start from begin');
+            break
+        } 
+        else{
+            alert(`Wrong guess, you have ${chances} guesses left \n Guess Higher!`);
+            userNumber = Number(prompt(`Give your next guess !\n`));
+        }
+    }
+}
