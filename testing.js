@@ -93,3 +93,20 @@ function NumberGuessing(){
     
 }
 }
+
+function rps(){
+
+    function getComputerChoice(){
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+          }
+        let option = getRandomInt(3);
+        if (option == 0){
+            return x = 'Rock'
+        } else if (option == 1){
+            return x = 'Paper'
+        } else {
+            return x = 'scissors'
+        } 
+    }
+}
