@@ -104,25 +104,35 @@ function rps(){
         let option = getRandomInt(3);
         return option;
     }
+
     let computerChoice = getComputerChoice(3);
+    let text
+    if (computerChoice == 0){
+        text = 'Rock'
+    } else if (computerChoice == 1 ){
+        text = 'Paper'
+    } else{
+        text = 'Scissors'
+    }
+
     if (userChoice == computerChoice){
-        alert('Draw')
+        alert(`Computer Choose ${text} \nDraw`)
     } else if ((userChoice == 0) && (computerChoice == 1)){
-        alert('You Lost')
+        alert(`Computer Choose ${text} \nYou Lost`)
     } else if ((userChoice == 0) && (computerChoice == 2)){
-        alert('You Won!')
+        alert(`Computer Choose ${text} \nYou Won!`)
     } else if ((userChoice == 1) && (computerChoice == 0)){
-        alert('You Won!')
+        alert(`Computer Choose ${text} \nYou Won!`)
     } else if ((userChoice == 1) && (computerChoice == 1)){
-        alert('Draw')
+        alert(`Computer Choose ${text} \nDraw`)
     } else if ((userChoice == 1) && (computerChoice == 2)){
-        alert('You Lost')
+        alert(`Computer Choose ${text} \nYou Lost`)
     } else if ((userChoice == 2 ) && (computerChoice == 0)){
-        alert('You Lost')
+        alert(`Computer Choose ${text} \nYou Lost`)
     } else if ((userChoice == 2) && (computerChoice == 1)){
-        alert('You Won!')
+        alert(`Computer Choose ${text} \nYou Won!`)
     } else if ((userChoice == 2 ) && (computerChoice == 2)){
-        alert('Draw')
+        alert(`Computer Choose ${text} \nDraw`)
     }
 
 }
