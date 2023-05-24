@@ -111,5 +111,18 @@ function rps(){
         alert('You Lost')
     } else if ((userChoice == 0) && (computerChoice == 2)){
         alert('You Won!')
+    } else if ((userChoice == 1) && (computerChoice == 0)){
+        alert('You Won!')
+    } else if ((userChoice == 1) && (computerChoice == 1)){
+        alert('Draw')
+    } else if ((userChoice == 1) && (computerChoice == 2)){
+        alert('You Lost')
+    } else if ((userChoice == 2 ) && (computerChoice == 0)){
+        alert('You Lost')
+    } else if ((userChoice == 2) && (computerChoice == 1)){
+        alert('You Won!')
+    } else if ((userChoice == 2 ) && (computerChoice == 2)){
+        alert('Draw')
     }
+
 }
