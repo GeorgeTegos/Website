@@ -96,17 +96,20 @@ function NumberGuessing(){
 
 function rps(){
 
+    let userChoice = Number(prompt('Choose :\n 0) Rock\n1) Paper\n2) Scissors'))
     function getComputerChoice(){
         function getRandomInt(max) {
             return Math.floor(Math.random() * max);
           }
         let option = getRandomInt(3);
-        if (option == 0){
-            return x = 'Rock'
-        } else if (option == 1){
-            return x = 'Paper'
-        } else {
-            return x = 'scissors'
-        } 
+        return option;
+    }
+    let computerChoice = getComputerChoice(3);
+    if (userChoice == computerChoice){
+        alert('Draw')
+    } else if ((userChoice == 0) && (computerChoice == 1)){
+        alert('You Lost')
+    } else if ((userChoice == 0) && (computerChoice == 2)){
+        alert('You Won!')
     }
 }
