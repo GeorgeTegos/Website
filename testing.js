@@ -115,24 +115,28 @@ function rps(){
         text = 'Scissors'
     }
 
-    if (userChoice == computerChoice){
-        alert(`Computer Choose ${text} \nDraw`)
-    } else if ((userChoice == 0) && (computerChoice == 1)){
-        alert(`Computer Choose ${text} \nYou Lost`)
-    } else if ((userChoice == 0) && (computerChoice == 2)){
-        alert(`Computer Choose ${text} \nYou Won!`)
-    } else if ((userChoice == 1) && (computerChoice == 0)){
-        alert(`Computer Choose ${text} \nYou Won!`)
-    } else if ((userChoice == 1) && (computerChoice == 1)){
-        alert(`Computer Choose ${text} \nDraw`)
-    } else if ((userChoice == 1) && (computerChoice == 2)){
-        alert(`Computer Choose ${text} \nYou Lost`)
-    } else if ((userChoice == 2 ) && (computerChoice == 0)){
-        alert(`Computer Choose ${text} \nYou Lost`)
-    } else if ((userChoice == 2) && (computerChoice == 1)){
-        alert(`Computer Choose ${text} \nYou Won!`)
-    } else if ((userChoice == 2 ) && (computerChoice == 2)){
-        alert(`Computer Choose ${text} \nDraw`)
+    function newRound(userChoice,computerChoice){
+        let result
+        if (userChoice == computerChoice){
+            result = alert(`Computer Choose ${text} \nDraw`)
+        } else if ((userChoice == 0) && (computerChoice == 1)){
+            result = alert(`Computer Choose ${text} \nYou Lost`)
+        } else if ((userChoice == 0) && (computerChoice == 2)){
+            result = alert(`Computer Choose ${text} \nYou Won!`)
+        } else if ((userChoice == 1) && (computerChoice == 0)){
+            result = alert(`Computer Choose ${text} \nYou Won!`)
+        } else if ((userChoice == 1) && (computerChoice == 1)){
+            result = alert(`Computer Choose ${text} \nDraw`)
+        } else if ((userChoice == 1) && (computerChoice == 2)){
+            result = alert(`Computer Choose ${text} \nYou Lost`)
+        } else if ((userChoice == 2 ) && (computerChoice == 0)){
+            result = alert(`Computer Choose ${text} \nYou Lost`)
+        } else if ((userChoice == 2) && (computerChoice == 1)){
+            result = alert(`Computer Choose ${text} \nYou Won!`)
+        } else if ((userChoice == 2 ) && (computerChoice == 2)){
+            result = alert(`Computer Choose ${text} \nDraw`)
+        }
+        return result;
     }
-
+    newRound(userChoice,computerChoice);
 }
