@@ -133,6 +133,28 @@ function rps(){
         let userChoice = getUserChoice()
         let computerChoice = getComputerChoice(3)
 
+        if (userChoice == computerChoice){
+            alert("It's a Tie ")
+        } else if ((userChoice == 'rock') && (computerChoice == 'paper')){
+            alert(`You Lost vs ${computerChoice}`)
+            computerScore = computerScore + 1;
+        }   else if ((userChoice == 'rock') && (computerChoice == 'scissors')){
+            alert(`You Won vs ${computerChoice}`)
+            userScore = userScore + 1 ;
+        } else if ((userChoice == 'paper') && (computerChoice == 'rock')){
+            alert(`You Won vs ${computerChoice}`)
+            userScore = userScore + 1;
+        } else if ((userChoice == 'paper') && (computerChoice == 'scissors')){
+            alert(`You Lost vs ${computerChoice}`)
+            computerScore = computerScore + 1;
+        } else if ((userChoice == 'scissors') && (computerChoice == 'rock')){
+            alert(`You Lost vs ${computerChoice}`)
+            computerScore = computerScore + 1;
+        } else if ((userChoice == 'scissors') && (computerChoice == 'paper')){
+            alert(`You Won vs ${computerChoice}`)
+            userScore = userScore + 1;
+        }
+
         if (userScore > computerScore){
              finalScore = 1;
         } else if(userScore < computerScore){
