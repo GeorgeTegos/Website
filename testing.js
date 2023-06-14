@@ -95,48 +95,102 @@ function NumberGuessing(){
 }
 
 function rps(){
-
-    let userChoice = Number(prompt('Choose :\n 0) Rock\n1) Paper\n2) Scissors'))
-    function getComputerChoice(){
+    
+    let rounds = Number(prompt('How many Rounds do you want to play ?'))    /*Number of rounds */
+    
+    function getComputerChoice(){ /* Computer Choice */
         function getRandomInt(max) {
             return Math.floor(Math.random() * max);
           }
         let option = getRandomInt(3);
+        if (option == 0){
+            option = 'rock'
+        } else if (option == 1 ){
+            option = 'paper'
+        } else{
+            option = 'scissors'
+        }
         return option;
     }
 
-    let computerChoice = getComputerChoice(3);
-    let text
-    if (computerChoice == 0){
-        text = 'Rock'
-    } else if (computerChoice == 1 ){
-        text = 'Paper'
-    } else{
-        text = 'Scissors'
+
+    function getUserChoice(){
+        let userChoice = Number(prompt('Choose :\n 0) Rock\n1) Paper\n2) Scissors'))
+
+        if (userChoice == 0){
+            userChoice = 'Rock'
+        } else if (userChoice == 1 ){
+            userChoice = 'Paper'
+        } else{
+            userChoice = 'Scissors'
+        }
+        return userChoice;
     }
 
-    function newRound(userChoice,computerChoice){
-        let result
+
+    function newRound(){
+        let finalScore , userScore , computerScore
+        let userChoice = getUserChoice()
+        let computerChoice = getComputerChoice(3)
+        
         if (userChoice == computerChoice){
-            result = alert(`Computer Choose ${text} \nDraw`)
-        } else if ((userChoice == 0) && (computerChoice == 1)){
-            result = alert(`Computer Choose ${text} \nYou Lost`)
-        } else if ((userChoice == 0) && (computerChoice == 2)){
-            result = alert(`Computer Choose ${text} \nYou Won!`)
-        } else if ((userChoice == 1) && (computerChoice == 0)){
-            result = alert(`Computer Choose ${text} \nYou Won!`)
-        } else if ((userChoice == 1) && (computerChoice == 1)){
-            result = alert(`Computer Choose ${text} \nDraw`)
-        } else if ((userChoice == 1) && (computerChoice == 2)){
-            result = alert(`Computer Choose ${text} \nYou Lost`)
-        } else if ((userChoice == 2 ) && (computerChoice == 0)){
-            result = alert(`Computer Choose ${text} \nYou Lost`)
-        } else if ((userChoice == 2) && (computerChoice == 1)){
-            result = alert(`Computer Choose ${text} \nYou Won!`)
-        } else if ((userChoice == 2 ) && (computerChoice == 2)){
-            result = alert(`Computer Choose ${text} \nDraw`)
+            alert(`Computer Choose ${computerChoice} \nDraw`)
+        } else if ((userChoice == 'Rock') && (computerChoice == 'Paper')){
+            alert(`Computer Choose ${computerChoice} \nYou Lost`)
+            computerScore = computerScore +1;
+        } else if ((userChoice == 'Rock') && (computerChoice == 'Scissors')){
+            alert(`Computer Choose ${computerChoice} \nYou Won!`)
+            userScore = userScore +1;
+        } else if ((userChoice == 'Paper') && (computerChoice == 'Rock')){ 
+            alert(`Computer Choose ${computerChoice} \nYou Won!`)
+            userScore = userScore +1;
+        } else if ((userChoice == 'Paper') && (computerChoice == 'Paper')){
+            alert(`Computer Choose ${computerChoice} \nDraw`)
+        } else if ((userChoice == 'Paper') && (computerChoice == 'Scissors')){ 
+            alert(`Computer Choose ${computerChoice} \nYou Lost`)
+            computerScore = computerScore +1;
+        } else if ((userChoice == 'Scissors' ) && (computerChoice == 'Rock')){ 
+            alert(`Computer Choose ${computerChoice} \nYou Lost`)
+            computerScore = computerScore +1;
+        } else if ((userChoice == 'Scissors') && (computerChoice == 'Paper')){ 
+            alert(`Computer Choose ${computerChoice} \nYou Won!`)
+            userScore = userScore +1;
+        } else if ((userChoice == 'Scissors' ) && (computerChoice == 'Scissors')){
+            alert(`Computer Choose ${computerChoice} \nDraw`)
         }
-        return result;
+
+        if (userScore > computerScore){
+             finalScore = 1;
+        } else if(userScore < computerScore){
+             finalScore = 2;
+        }
+        finalScore = parseInt(finalScore)
+        return finalScore
+
+    } 
+
+    function moreRounds(){
+        let x,User,Compu;
+        for (i=0;i<rounds;i++){
+            x = parseInt(newRound())
+            if (x == 1){
+                User = User +1
+            } else if (x == 2){
+                Compu = Compu + 1;
+            }
+        }
+        if (User > Compu){
+           alert(`User won`)
+        } else if (Compu > User){
+          alert(`Computer won`)
+        } 
+
     }
-    newRound(userChoice,computerChoice);
+
+    
+    if (rounds == 1){
+        newRound()
+    } else {
+        moreRounds()
+    }
 }
