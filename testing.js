@@ -125,9 +125,9 @@ function rps(){
         } else if (userChoice == 'scissors'){
             return userChoice
         } else {
-            alert('Error')
-        }
-    }
+            alert('Wrong input\nYou lost this round')
+        }       
+    }   
 
 
     function newRound(){
@@ -189,7 +189,9 @@ function rps(){
     
     if (rounds == 1){
         newRound()
-    } else {
+    } else if (rounds > 1 ){
         moreRounds()
+    } else {
+        alert('Wrong rounds input, try again!')
     }
 }
