@@ -124,12 +124,14 @@ function rps(){
             return userChoice
         } else if (userChoice == 'scissors'){
             return userChoice
+        } else {
+            alert('Error')
         }
     }
 
 
     function newRound(){
-        let finalScore , userScore , computerScore
+        let finalScore = 0 , userScore = 0 , computerScore = 0;
         let userChoice = getUserChoice()
         let computerChoice = getComputerChoice(3)
 
@@ -156,30 +158,31 @@ function rps(){
         }
 
         if (userScore > computerScore){
-             finalScore = 1;
+             finalScore = 'user';
         } else if(userScore < computerScore){
-             finalScore = 2;
+             finalScore = 'computer';
         }
-        finalScore = parseInt(finalScore)
         return finalScore
 
     } 
 
     function moreRounds(){
-        let x,User,Compu;
+        let xRounds,User = 0 ,Computer = 0;
         for (i=0;i<rounds;i++){
-            x = parseInt(newRound())
-            if (x == 1){
+            xRounds = newRound()
+            if (xRounds == 'user'){
                 User = User +1
-            } else if (x == 2){
-                Compu = Compu + 1;
+            } else if (xRounds == 'computer'){
+                Computer = Computer + 1;
             }
         }
-        if (User > Compu){
-           alert(`User won`)
-        } else if (Compu > User){
-          alert(`Computer won`)
-        } 
+        if (User > Computer){
+           alert(`User won with score : ${User} vs ${Computer}`)
+        } else if (Computer > User){
+          alert(`Computer won with score : ${Computer} vs ${User}`)
+        } else {
+            alert("It's a Final Draw")
+        }
 
     }
 
