@@ -16,7 +16,7 @@ body{
     border: 1px red solid;
     width: 100%;
     height: 50px;
-    margin:0%;
+    margin:0;
     padding-top: 15px;
     padding-bottom: 15px;
     background-color: #78777a ;
@@ -31,8 +31,8 @@ ol .home,.about,.links, .contact,.testing,.mid_logo{
 }
 
 .mid_logo{
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .main_body{
